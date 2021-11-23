@@ -8,6 +8,7 @@ import GlobalStyles from '../components/styles/Global'
 const SeConnecter = lazy(() => import("../pages/SeConnecter"));
 const CreerCompte = lazy(() => import("../pages/CreerCompte"));
 const TestStyle = lazy(() => import("../pages/TestStyle"));
+const Accueil = lazy(() => import("../pages/Accueil"));
 
 const App = () => (
     // le user connecté est rendu disponible dans toute l'app via context
@@ -20,6 +21,7 @@ const App = () => (
                     <Route path="/" element={<SeConnecter />} />
                     <Route path="/nouveau-compte" element={<CreerCompte />} />
                     <Route path="/test-style" element={<TestStyle />} />
+                    <Route path="/vino" element={<Accueil />} />
                 </Routes>
             </Suspense>
         </Router>

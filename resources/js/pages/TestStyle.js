@@ -1,6 +1,6 @@
 import { Button, ButtonBackUp } from '../components/styles/Button.styled';
-import { Input } from '../components/styles/Input.styled';
-
+import { Input, Select } from '../components/styles/Input.styled';
+import BouteilleBlackLogo from "../../../public/svg/bouteilleBlack.png";
 
 const TestStyle = () => {
 
@@ -16,6 +16,10 @@ const TestStyle = () => {
             <Button bg="#303031" color="#fff">BOIRE</Button>
             <Input placeholder="Nom Usager"></Input>
             <ButtonBackUp></ButtonBackUp>
+            <Select>
+                <option>Cellier</option>
+            </Select>
+            <img src={BouteilleBlackLogo} alt="logo" /> 
         </div>
     )
 }
