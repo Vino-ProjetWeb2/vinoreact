@@ -8,12 +8,14 @@ import TacheBas from "../../../public/svg/tacheBas.svg";
 import LogoVino from "../../../public/svg/logo.svg";
 
 
-const Accueil = () => {
+
+
+const Accueil = (props) => {
 
     return (
         <AccueilMain>
                 <img src={TacheHaut} alt="Tache Rouge haut" /> 
-                <h2>Bienvenue dans ton cellier</h2>
+                <h2>Bienvenue dans ton cellier {props.usagerNom} </h2>
                 <img src={BouteilleBlackLogo} alt="Logo Bouteille vino" /> 
                 <img src={LogoVino} alt="Logo Vino" /> 
                 <Select>

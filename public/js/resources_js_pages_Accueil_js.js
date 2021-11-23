@@ -72,13 +72,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Accueil = function Accueil() {
+var Accueil = function Accueil(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_components_styles_Accueil_styled__WEBPACK_IMPORTED_MODULE_2__.AccueilMain, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
       src: _public_svg_tacheHaut_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
       alt: "Tache Rouge haut"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
-      children: "Bienvenue dans ton cellier"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("h2", {
+      children: ["Bienvenue dans ton cellier ", props.usagerNom, " "]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
       src: _public_svg_bouteilleBlack_png__WEBPACK_IMPORTED_MODULE_3__["default"],
       alt: "Logo Bouteille vino"
