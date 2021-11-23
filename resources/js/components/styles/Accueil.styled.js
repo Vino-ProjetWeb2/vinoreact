@@ -6,9 +6,6 @@ export const AccueilMain = styled.main`
     overflow: hidden;
     display:flex;
     flex-direction: column;
-    font-family: 'Gotham Black';
-    font-size: 1.2rem;
-    font-weight: 300;
     justify-content:center;
     position: relative;
 
@@ -17,11 +14,15 @@ export const AccueilMain = styled.main`
         align-self:center;
         margin-left:40px;
         margin-right:40px;
-
+        font-size: 1.728rem;
+        font-weight: 300;
+        font-family: 'Gotham Black';
+        max-width:250px;
     }
     img:nth-of-type(1) {
         position:absolute;
-        top:-40px;
+        top:0px;
+        transform: translate(0, -40%);
     }
 
     //bouteille
@@ -34,21 +35,33 @@ export const AccueilMain = styled.main`
     // logo vino
         img:nth-of-type(3) {
         margin-top:20px;
-        max-width:25%;
+        max-width:100px;
         min-widht:40px;
         align-self:center;
     }
 
     select{
         align-self:center;
-        max-width:75%;
+        max-width:250px;
     }
 
     img:nth-of-type(4) {
         position:absolute;
-        bottom:-60px;
+        bottom:0px;
+        transform: translate(-1%, 40%);
     }
 
+    @media (min-width:760px){
+        img:nth-of-type(1) {
+            position:absolute;
+            top:0px;
+            transform: translate(0, -60%);
+        }
 
-
+        img:nth-of-type(4) {
+            position:absolute;
+            bottom:0px;
+            transform: translate(-1%, 60%);
+        }
+      }
 `

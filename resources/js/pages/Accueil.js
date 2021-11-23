@@ -11,9 +11,7 @@ import LogoVino from "../../../public/svg/logo.svg";
 const Accueil = () => {
 
     return (
-        
         <AccueilMain>
-
                 <img src={TacheHaut} alt="Tache Rouge haut" /> 
                 <h2>Bienvenue dans ton cellier</h2>
                 <img src={BouteilleBlackLogo} alt="Logo Bouteille vino" /> 
@@ -22,7 +20,6 @@ const Accueil = () => {
                     <option>Sélectionne ton cellier</option>
                 </Select>
                 <img src={TacheBas} alt="Tache Rouge bas" /> 
-
         </AccueilMain>
     )
 }
