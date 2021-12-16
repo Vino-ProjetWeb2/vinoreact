@@ -7,14 +7,15 @@ import useForm from "../../../hooks/useForm";
 import Http from "../../../HttpClient";
 // validation du formulaire
 import addCellierFormValidate from "./addCellierFormValidate";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { slugify } from "../../../helpers/slugify";
 import { useUser } from "../../../context/user";
 
 const AddCellierForm = () => {
     const navigate = useNavigate();
     const user = sessionStorage.getItem("user");
-    const { getMe } = useUser();
+    // const { getMe } = useUser();
+    
     // INITIAL FORM STATE
     const initialValues = {
         nom_cellier: "",
@@ -22,8 +23,9 @@ const AddCellierForm = () => {
     };
     const registerCellier = async (values) => {
         const { data } = await Http.post(`cellier/create`, values);
+        console.log(data)
         localStorage.setItem("cellier", JSON.stringify(data));
-        getMe();
+        // await getMe();
         const slug = slugify(data.nom_cellier);
         navigate(`/${slug}`);
     };

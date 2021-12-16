@@ -17,7 +17,6 @@ import InputFile from "./InputFile";
 
 */
 const AdminAjoutBouteille = () => {
-
     const [categories, setCategories] = useState([]);
     const navigate = useNavigate();
     const {
@@ -45,7 +44,7 @@ const AdminAjoutBouteille = () => {
 
     // récupération des catégories de vin pour populer le <select>
     useEffect(() => {
-        let isSubscribed = true
+        let isSubscribed = true;
         getCategories().then(({ data }) => setCategories(data));
         return () => (isSubscribed = false);
     }, []);
@@ -55,7 +54,6 @@ const AdminAjoutBouteille = () => {
             let isSubscribed = true;
             getBouteilleWiki(id).then(({ data }) => {
                 const bouteille = data;
-                console.log(bouteille);
                 setBouteille({
                     type: "editBouteille",
                     id: bouteille.id,
@@ -72,7 +70,7 @@ const AdminAjoutBouteille = () => {
             });
 
             return () => (isSubscribed = false);
-        }, []);
+        }, [laBouteille]);
     }
 
     const initialValues = laBouteille;
@@ -199,7 +197,7 @@ const AdminAjoutBouteille = () => {
                             </option>
                         ))}
                     </SelectCategorie>
-                    {values.url_img && (
+                    {values?.url_img && (
                         <InputFile
                             id="url_img"
                             name="url_img"

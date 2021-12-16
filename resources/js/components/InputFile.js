@@ -23,7 +23,7 @@ const ImgPreview = styled.img.attrs((props) => ({
 // REACT
 const InputFile = ({ existingImg, onImageChange }) => {
     const { uploadImage } = useCellier();
-    const [preview, setPreview] = useState(existingImg || "");
+    const [preview, setPreview] = useState(existingImg || "https://res.cloudinary.com/vino-project/image/upload/v1639165462/bouteilleBlack_lz3rkm.png");
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     // preview de l'image
