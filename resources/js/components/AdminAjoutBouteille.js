@@ -70,7 +70,7 @@ const AdminAjoutBouteille = () => {
             });
 
             return () => (isSubscribed = false);
-        }, [laBouteille]);
+        }, []);
     }
 
     const initialValues = laBouteille;
@@ -197,12 +197,21 @@ const AdminAjoutBouteille = () => {
                             </option>
                         ))}
                     </SelectCategorie>
-                    {values?.url_img && (
+
+                    {id && values.url_img && (
                         <InputFile
                             id="url_img"
                             name="url_img"
                             onImageChange={(img) => handleImageChange(img)}
                             existingImg={values?.url_img}
+                        />
+                    )}
+
+                    {!id && (
+                        <InputFile
+                            id="url_img"
+                            name="url_img"
+                            onImageChange={(img) => handleImageChange(img)}
                         />
                     )}
 
