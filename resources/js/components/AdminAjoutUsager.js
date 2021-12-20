@@ -12,7 +12,7 @@ import { useNavigate, useParams } from "react-router-dom";
 // composante Pour ajouter et modifier usager
 const AdminAjoutUsager = () => {
     const navigate = useNavigate();
-    const { getUsager, updateUsager, register } = useUser();
+    const { getUsager, updateUsager, registerAdmin } = useUser();
     const { id } = useParams();
     const [usager, setUsager] = useState({
         type: "usagerEdit",
@@ -104,7 +104,7 @@ const AdminAjoutUsager = () => {
         };
 
         const registerUser = async (values) => {
-            await register(values);
+            await registerAdmin(values);
             navigate("/admin/usager");
         };
 

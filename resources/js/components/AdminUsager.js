@@ -86,8 +86,6 @@ const AdminUsager = () => {
         setPage(0);
     };
 
-    console.log('serach', results)
-
     return (
         <Admin>
             <div>
