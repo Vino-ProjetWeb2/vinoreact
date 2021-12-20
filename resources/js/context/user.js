@@ -68,6 +68,13 @@ export const UserProvider = ({ children }) => {
         });
     };
 
+    /**
+     * @returns {void}
+     */
+    const registerAdmin = async (creds) => {
+        const { data } = await Http.post("register", creds);
+    };
+
     // enregistre le nouvel utilisateur
     const updateUsager = async (creds) => {
         const { data } = await Http.put(`/user/edit/${creds.id}`, creds);
@@ -96,20 +103,31 @@ export const UserProvider = ({ children }) => {
     };
     //put('/user/edit/{id}
 
-
     /**
      * Récupérer une usager par id
      * @param {number} id
      * @returns {object}
      */
-     const getUsager = async (id) => {
-         const usager = Http.get(`/user/${id}`);
-         return usager;
-     }
-     
+    const getUsager = async (id) => {
+        const usager = Http.get(`/user/${id}`);
+        return usager;
+    };
 
     return (
-        <UserContext.Provider value={{ user, login, register, logout, getUsagers, deleteUsager, updateUsager, searchUsager, getUsager}}>
+        <UserContext.Provider
+            value={{
+                user,
+                login,
+                register,
+                logout,
+                getUsagers,
+                deleteUsager,
+                updateUsager,
+                searchUsager,
+                getUsager,
+                registerAdmin
+            }}
+        >
             {children}
         </UserContext.Provider>
     );
